@@ -26,5 +26,23 @@ namespace CRUDer.Controllers
 
             return View();
         }
+
+        [HttpPost]
+        public JsonResult GetDetail() {
+            return Json(
+                new List<object>() {
+                    new Post() { Title = "zhao", PostTime = "zhao", LastUpdatedTime = "zhao", Author = "zhao"},
+                    new Post() { Title = "zhao", PostTime = "zhao", LastUpdatedTime = "zhao", Author = "zhao"},
+                    new Post() { Title = "zhao", PostTime = "zhao", LastUpdatedTime = "zhao", Author = "zhao"}
+                }
+                ,JsonRequestBehavior.AllowGet);
+        }
+    }
+
+    public class Post {
+        public string Title { get; set; }
+        public string PostTime { get; set; }
+        public string LastUpdatedTime { get; set; }
+        public string Author { get; set; }
     }
 }
