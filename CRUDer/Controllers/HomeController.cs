@@ -30,19 +30,25 @@ namespace CRUDer.Controllers
         [HttpPost]
         public JsonResult GetDetail() {
             return Json(
+                new List<object>{new Dictionary<object,object> {
+                    {"Title","タイトル" },
+                    {"PostTime","投稿時点" },
+                    {"LastUpdatedTime","最後の改修日" },
+                    {"Author","投稿人" }
+                },
                 new List<object>() {
-                    new Post() { Title = "zhao", PostTime = "zhao", LastUpdatedTime = "zhao", Author = "zhao"},
-                    new Post() { Title = "zhao", PostTime = "zhao", LastUpdatedTime = "zhao", Author = "zhao"},
-                    new Post() { Title = "zhao", PostTime = "zhao", LastUpdatedTime = "zhao", Author = "zhao"}
-                }
+                            new Post() { Title = "zhao", PostTime = DateTime.Now, LastUpdatedTime = DateTime.Now, Author = "zhao"},
+                            new Post() { Title = "zhao", PostTime = DateTime.Now, LastUpdatedTime = DateTime.Now, Author = "zhao"},
+                            new Post() { Title = "zhao", PostTime = DateTime.Now, LastUpdatedTime = DateTime.Now, Author = "zhao"}
+                        }}                
                 ,JsonRequestBehavior.AllowGet);
         }
     }
 
-    public class Post {
+    public class Post {        
         public string Title { get; set; }
-        public string PostTime { get; set; }
-        public string LastUpdatedTime { get; set; }
+        public DateTime PostTime { get; set; }
+        public DateTime LastUpdatedTime { get; set; }
         public string Author { get; set; }
     }
 }

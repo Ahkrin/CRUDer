@@ -26,12 +26,21 @@
 }
 
 .btn-alt{
-    border:1px solid #dfe2e5;
+    background-color:#ff8140;
+    border-color:#f77c3d;    
+    border-width:1px;
+    border-style:solid;
     padding:10px 30px;
 }
 
 .btn-alt:hover{
-    border-color:#abf3f3;
+    background-color:#f7671d;
+    border-color:#f06923;
+}
+
+.btn-alt:active{
+    background-color:#e85f19;
+    border-color:#ea6520;
 }
 
 .group:before,
